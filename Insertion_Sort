@@ -1,0 +1,35 @@
+import java.util.*;
+class INSERTION_SORT
+{
+    void main()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter length of array");
+        int l=sc.nextInt();
+        int a[]=new int[l];
+        System.out.println("Enter Array Elements");
+        for(int i=0;i<l;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        for(int i=1;i<l;i++)
+        {
+            int j=i;
+            while(j>0 && a[j]<a[j-1])
+            {
+               a[j]=a[j]+a[j-1];
+                a[j-1]=a[j]-a[j-1];
+                a[j]=a[j]-a[j-1];
+                /**int t=a[j]; --> Alternate way to swap two numbers
+                a[j]=a[j-1];
+                a[j-1]=t;**/
+                j--;
+            }
+            
+        }
+        for(int val: a)
+        System.out.print(val+" ");
+        
+        
+    }
+}
