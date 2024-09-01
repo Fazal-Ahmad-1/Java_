@@ -1,0 +1,44 @@
+import java.util.*;
+class rock_paper_scissor
+{
+    int generate()
+    {
+        int num=((int)(Math.random()*Math.random()*10))%10;
+        return num;
+    }
+    String rpc(int n)
+    {
+        if(n%3==0)
+        return "rock";
+        else if(n%2==0)
+        return "paper";
+        else
+        return "scissors";
+    }
+    void play()
+    {   System.out.println("Welcome to Rock , Paper, Scissors ");
+        System.out.println("Press 1 to start");
+        Scanner sc=new Scanner(System.in); 
+        int n=sc.nextInt();
+        if(n==1)
+        {
+            int i=1;
+            while(i>0)
+            {
+                String comp=rpc(generate());
+                System.out.println("Rock, Paper, Scissor");
+                System.out.print("Human =");
+                String human=sc.next();
+                System.out.println();
+                System.out.println("Computer ="+comp);
+                if(comp.equalsIgnoreCase(human))
+                { System.out.println("Game Over");
+                    System.out.println("Your score ="+(i-1));
+                break;
+                }
+                else
+                i++;
+            }
+        }
+    }
+}
